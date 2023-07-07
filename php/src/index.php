@@ -1,20 +1,34 @@
 <?php
-//These are the defined authentication environment in the db service
+// Umgebungsvariablen aus der .env-Datei laden
+$host = getenv('MYSQL_HOST');
+$user = getenv('MYSQL_USER');
+$pass = getenv('MYSQL_PASSWORD');
+$database = getenv('MYSQL_DATABASE');
 
-// The MySQL service named in the docker-compose.yml.
-$host = 'db';
+// MySQL-Verbindung herstellen
+$conn = new mysqli($host, $user, $pass, $database);
 
-// Database use name
-$user = 'lb3_user';
-
-//database user password
-$pass = 'kzfrakfe743753573fufhu';
-
-// check the MySQL connection status
-$conn = new mysqli($host, $user, $pass);
+// Überprüfen, ob die Verbindung erfolgreich ist
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} else {
-    echo "Connected to MySQL server successfully!";
+    die("Verbindung zur MySQL-Datenbank fehlgeschlagen: " . $conn->connect_error);
 }
+
+// SELECT-Abfrage ausführen
+$sql = 'SELECT * FROM users';
+
+if ($result = $conn->query($sql)) {
+    $users = $result->fetch_all(MYSQLI_ASSOC);
+
+    // Benutzerdaten anzeigen
+    foreach ($users as $user) {
+        echo "<br>";
+        echo $user['username'] . " " . $user['password'];
+        echo "<br>";
+    }
+
+    $result->free();
+}
+
+// MySQL-Verbindung schließen
+$conn->close();
 ?>

@@ -1,8 +1,10 @@
 version: '3.8'
 services:
-    php-apache-environment:
-        container_name: php-apache
+    php-apache:
+        container_name: M300_LB3_php-apache
         restart: unless-stopped
+        env_file:
+            - ./mysql/.env
         build:
             context: ./php
             dockerfile: Dockerfile
@@ -13,8 +15,10 @@ services:
         ports:
             - 8000:80
     db:
-        container_name: db
-        image: mysql
+        container_name: M300_LB3_db
+        build:
+            context: ./mysql
+            dockerfile: Dockerfile
         restart: unless-stopped
         env_file:
             - ./mysql/.env
@@ -22,14 +26,15 @@ services:
             - ./mysql/data:/var/lib/mysql
         ports:
             - "9906:3306"
-
     phpmyadmin:
         image: phpmyadmin/phpmyadmin
+        container_name: M300_LB3_phpmyadmin
         restart: unless-stopped
+        env_file:
+            - ./mysql/.env
         environment:
             PMA_HOST: db
         ports:
             - '8080:80'
         depends_on:
             - db
-
