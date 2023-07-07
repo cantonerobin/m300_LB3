@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MYSQL_USER="root"
+MYSQL_USER="$MYSQL_ROOT_USER"
 MYSQL_PASSWORD="$MYSQL_ROOT_PASSWORD"
 MYSQL_DATABASE="$MYSQL_DATABASE"
 SQL_SCRIPT="/docker-entrypoint-initdb.d/init.sql"

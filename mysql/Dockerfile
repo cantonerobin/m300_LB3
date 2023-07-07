@@ -16,13 +16,13 @@ ENV MYSQL_PASSWORD $MYSQL_PASSWORD
 COPY execute_sql.sh /docker-entrypoint-initdb.d/execute_sql.sh
 
 # Erlaube das ausführen des Scripts
-RUN chmod +x /docker-entrypoint-initdb.d/execute_sql.sh
+RUN chmod 777 /docker-entrypoint-initdb.d/execute_sql.sh
 
 # Kopiere das SQL-Skript in den Container
 COPY init.sql /docker-entrypoint-initdb.d/init.sql
 
-# Führe den Befehl 'docker-entrypoint.sh' aus
-ENTRYPOINT ["docker-entrypoint.sh"]
+# Starte das Skript vor dem MySQL-Server
+CMD ["/docker-entrypoint-initdb.d/execute_sql.sh"]
 
 # Starte den MySQL-Server
 CMD ["mysqld"]
