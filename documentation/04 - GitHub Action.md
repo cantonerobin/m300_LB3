@@ -11,19 +11,19 @@ For the GitHub Action we have to create 2 Secrets. This secret will be used in t
 ## GitHub Action File
 With GitHub Action we can trigger a docker Build Job whenever the developer does push to the main branch. 
 
-[Apache Action File](/.github\workflows\dockerfile_apache_to_Dockerhub.yml)
+[Apache Action File](/.github/workflows/dockerfile_apache_to_Dockerhub.yml)
 
-[MySQL Action File](/.github\workflows\dockerfile_mysql_to_Dockerhub.yml)
+[MySQL Action File](/.github/workflows/dockerfile_mysql_to_Dockerhub.yml)
 
 Both files are almost identical, they only differ in the part where the image is tagged.
 
 ## Logs
 
 **Here you see an overview of the Action for Apache**
-![Github Action Steps](pics\GitHub_Action_Apache.log.png)
+![Github Action Steps](/pics/GitHub_Action_Apache.log.png)
 
 **Here you see an overview of the Action for MySQL**
-![GitHub Action Build&Push](\pics\GitHub_Action_MySQL.log.png)
+![GitHub Action Build&Push](/pics/GitHub_Action_MySQL.log.png)
 
 For more informations you can visit the Repository.
 https://github.com/cantonerobin/m300_LB3/actions
