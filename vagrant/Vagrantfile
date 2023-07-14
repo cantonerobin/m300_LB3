@@ -81,7 +81,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       docker network connect frontend M300_LB3_phpmyadmin
 
       # Service nginx
-      docker run -d --name M300_LB3_proxy1 \
+      docker run -d --name M300_LB3_proxy \
         --restart on-failure:10 \
         --cpus=1 \
         --memory=1g \

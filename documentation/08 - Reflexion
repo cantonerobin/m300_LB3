@@ -1,0 +1,12 @@
+# Reflection
+I enjoyed this assignment, I could combine already known things like Docker with new things like GitHub Actions and Vagrant.
+I liked the part, where I created a SQL Script which gets deployed at startup of the container.
+
+## What did I learn.
+- Write Dockerfiles which import variables from an .env File.
+
+## What am I satisfied with?
+I am satisfied that the whole process works. It's all automated and working.
+
+## What will I do differently next time?
+Better plan which features I want to implement.
