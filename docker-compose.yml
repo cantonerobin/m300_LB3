@@ -36,3 +36,11 @@ services:
             - '8080:80'
         depends_on:
             - db
+    nginx:
+        image: nginx:latest
+        container_name: M300_LB3_nginx
+        restart: unless-stopped
+        ports:
+            - 80:80
+        volumes:
+            - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
