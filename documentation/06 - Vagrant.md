@@ -14,3 +14,17 @@ Because the images are stored in the public repo, I can download them directly h
 
 Here are several log files and screenshots to show that everything is working.
 
+**Log Files**
+
+**[Docker Apache log](logs\apache.log)**
+
+**[Docker phpmyadmin log](logs\phpmyadmin.log)**
+
+**[Docker mysql log](logs\mysql.log)**
+
+**[Docker nginx log](logs\nginx.log)**
+
+**Screenshots**
+PHPMyAdmin is reachable
+![Alt text](<pics\phpmyadmin.png>)
+

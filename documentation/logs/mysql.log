@@ -1,0 +1,50 @@
+root@docker01:/home/vagrant# docker logs M300_LB3_db        
+2023-07-14 15:11:20+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.33-1.el8 started.
+2023-07-14 15:11:20+00:00 [Note] [Entrypoint]: Initializing database files
+2023-07-14T15:11:20.968079Z 0 [Warning] [MY-011068] [Server] The syntax '--skip-host-cache' is deprecated and will be removed in a future release. Please use SET GLOBAL host_cache_size=0 instead.
+2023-07-14T15:11:20.968505Z 0 [System] [MY-013169] [Server] /usr/sbin/mysqld (mysqld 8.0.33) initializing of server in progress as process 41
+2023-07-14T15:11:20.990567Z 0 [Warning] [MY-010159] [Server] Setting lower_case_table_names=2 because file system for /var/lib/mysql/ is case insensitive
+2023-07-14T15:11:21.051748Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2023-07-14T15:11:22.249594Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2023-07-14T15:11:24.851227Z 6 [Warning] [MY-010453] [Server] root@localhost is created with an empty password ! Please consider switching off the --initialize-insecure option.
+2023-07-14 15:11:28+00:00 [Note] [Entrypoint]: Database files initialized
+2023-07-14 15:11:28+00:00 [Note] [Entrypoint]: Starting temporary server
+2023-07-14T15:11:28.829936Z 0 [Warning] [MY-011068] [Server] The syntax '--skip-host-cache' is deprecated and will be removed in a future release. Please use SET GLOBAL host_cache_size=0 instead.
+2023-07-14T15:11:28.846180Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0.33) starting as process 85
+2023-07-14T15:11:28.853325Z 0 [Warning] [MY-010159] [Server] Setting lower_case_table_names=2 because file system for /var/lib/mysql/ is case insensitive
+2023-07-14T15:11:28.868257Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2023-07-14T15:11:29.729905Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2023-07-14T15:11:30.239775Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2023-07-14T15:11:30.240211Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2023-07-14T15:11:30.255770Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+2023-07-14T15:11:30.301403Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Socket: /var/run/mysqld/mysqlx.sock
+2023-07-14T15:11:30.301547Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.33'  socket: '/var/run/mysqld/mysqld.sock'  port: 0  MySQL Community Server - GPL.
+2023-07-14 15:11:30+00:00 [Note] [Entrypoint]: Temporary server started.
+'/var/lib/mysql/mysql.sock' -> '/var/run/mysqld/mysqld.sock'
+Warning: Unable to load '/usr/share/zoneinfo/iso3166.tab' as time zone. Skipping it.
+Warning: Unable to load '/usr/share/zoneinfo/leap-seconds.list' as time zone. Skipping it.
+Warning: Unable to load '/usr/share/zoneinfo/leapseconds' as time zone. Skipping it.
+Warning: Unable to load '/usr/share/zoneinfo/tzdata.zi' as time zone. Skipping it.
+Warning: Unable to load '/usr/share/zoneinfo/zone.tab' as time zone. Skipping it.
+Warning: Unable to load '/usr/share/zoneinfo/zone1970.tab' as time zone. Skipping it.
+2023-07-14 15:11:33+00:00 [Note] [Entrypoint]: Creating database lb3_db
+2023-07-14 15:11:33+00:00 [Note] [Entrypoint]: Creating user lb3_user
+2023-07-14 15:11:33+00:00 [Note] [Entrypoint]: Giving user lb3_user access to schema lb3_db
+
+2023-07-14 15:11:33+00:00 [Note] [Entrypoint]: /usr/local/bin/docker-entrypoint.sh: running /docker-entrypoint-initdb.d/execute_sql.sh
+mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 2003 (HY000): Can't connect to MySQL server on 'db:3306' (111)
+2023-07-14 15:11:34+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.33-1.el8 started.
+'/var/lib/mysql/mysql.sock' -> '/var/run/mysqld/mysqld.sock'
+2023-07-14T15:11:34.550110Z 0 [Warning] [MY-011068] [Server] The syntax '--skip-host-cache' is deprecated and will be removed in a future release. Please use SET GLOBAL host_cache_size=0 instead.
+2023-07-14T15:11:34.555294Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0.33) starting as process 1
+2023-07-14T15:11:34.560006Z 0 [Warning] [MY-010159] [Server] Setting lower_case_table_names=2 because file system for /var/lib/mysql/ is case insensitive
+2023-07-14T15:11:34.574919Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2023-07-14T15:11:37.545159Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2023-07-14T15:11:37.736189Z 0 [System] [MY-010229] [Server] Starting XA crash recovery...
+2023-07-14T15:11:37.741817Z 0 [System] [MY-010232] [Server] XA crash recovery finished.
+2023-07-14T15:11:37.903504Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2023-07-14T15:11:37.904026Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2023-07-14T15:11:37.923814Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+2023-07-14T15:11:37.953475Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060, socket: /var/run/mysqld/mysqlx.sock
+2023-07-14T15:11:37.953759Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.33'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.

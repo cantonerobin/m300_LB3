@@ -1,0 +1,8 @@
+root@docker01:/home/vagrant# docker logs M300_LB3_phpmyadmin
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 192.168.0.3. Set the 'ServerName' directive globally to suppress this message
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 192.168.0.3. Set the 'ServerName' directive globally to suppress this message
+[Fri Jul 14 15:11:21.883807 2023] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.56 (Debian) PHP/8.1.17 configured -- resuming normal operations
+[Fri Jul 14 15:11:21.883836 2023] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+192.168.0.1 - - [14/Jul/2023:15:11:37 +0000] "GET / HTTP/1.1" 200 6155 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/115.0"
+192.168.0.1 - - [14/Jul/2023:15:11:38 +0000] "GET /js/messages.php?l=de&v=5.2.1 HTTP/1.1" 200 9664 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/115.0"
+192.168.0.1 - - [14/Jul/2023:15:11:38 +0000] "GET /favicon.ico HTTP/1.1" 200 22788 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/115.0"
