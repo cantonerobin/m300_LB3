@@ -43,54 +43,56 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       cd /opt
 
       # Netzwerke erstellen
-      docker network create FRONTEND
-      docker network create BACKEND
+      docker network create --driver bridge --internal backend
+      docker network create --driver bridge frontend
 
       # Service php-apache
-      docker build -t php-apache ./php
-      docker run -d --name M300_LB3_php-apache \
-          --restart on-failure:10 \
-          --cpus=2 \
-          --memory=2g \
-          --env-file ./mysql/.env \
-          -v ./php/src:/var/www/html/ \
-          -p 8000:80 \
-          --network BACKEND \
-          php-apache
+      docker run -d --name M300_LB3_web \
+        --restart on-failure:10 \
+        --cpus=1 \
+        --memory=1g \
+        --env-file /opt/mysql/.env \
+        -v /opt/php/src:/var/www/html/ \
+        -p 8000:80 \
+        --network backend \
+        cantonerobin/m300_lb3_apache:latest
 
       # Service db
-      docker build -t db ./mysql
       docker run -d --name M300_LB3_db \
-          --restart on-failure:10 \
-          --cpus=2 \
-          --memory=2g \
-          --env-file ./mysql/.env \
-          -v ./mysql/data:/var/lib/mysql \
-          -p 9906:3306 \
-          --network BACKEND \
-          db
+        --restart on-failure:10 \
+        --cpus=1 \
+        --memory=1g \
+        --env-file /opt/mysql/.env \
+        -v /opt/mysql/data:/var/lib/mysql \
+        -p 9906:3306 \
+        --network backend \
+        cantonerobin/m300_lb3_mysql:latest
 
       # Service phpmyadmin
       docker run -d --name M300_LB3_phpmyadmin \
-          --restart on-failure:10 \
-          --cpus=2 \
-          --memory=2g \
-          -e PMA_HOST=db \
-          -p 8080:80 \
-          --network FRONTEND \
-          --network BACKEND \
-          phpmyadmin/phpmyadmin
+        --restart on-failure:10 \
+        --cpus=1 \
+        --memory=1g \
+        -e PMA_HOST=db \
+        -p 8080:80 \
+        --network backend \
+        phpmyadmin/phpmyadmin
+
+      # Because of a bug we can not assign multiple Networks in the docker run command , so we connect the frontend network after it
+      docker network connect frontend M300_LB3_phpmyadmin
 
       # Service nginx
       docker run -d --name M300_LB3_nginx \
-          --restart on-failure:10 \
-          --cpus=2 \
-          --memory=2g \
-          -p 80:80 \
-          -v ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro \
-          --network FRONTEND \
-          nginx:latest
-
+        --restart on-failure:10 \
+        --cpus=1 \
+        --memory=1g \
+        -p 80:80 \
+        -v /opt/nginx/nginx.conf:/etc/nginx/nginx.conf:ro \
+        --network backend \
+        nginx:latest
+      
+      # Because of a bug we can not assign multiple Networks in the docker run command , so we connect the frontend network after it
+      docker network connect frontend M300_LB3_nginx
 
     SHELL
   end
