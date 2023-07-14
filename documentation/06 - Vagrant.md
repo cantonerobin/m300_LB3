@@ -1,5 +1,5 @@
 # Vagrant
-**[Vagrantfile](../vagrant\Vagrantfile)**
+**[Vagrantfile](/vagrant/Vagrantfile)**
 
 For the base setup I have used the same Vagrantfile as i have in the LB2. In addition, I wanted to install the docker compose plugin. This did not work because the Vagrant box has an Ubuntu image that is too old and is no longer supported. Instead of making a hacky backport, I decided to rewrite the docker compose file into ADHoc commands and store them directly in the Vagrant file.
 
@@ -8,7 +8,7 @@ Because the images are stored in the public repo, I can download them directly h
 
 ## Logs
 
-**[vagrant up](\logs\vagrant_up.log)**
+**[vagrant up](/documentation/logs/vagrant_up.log)**
 
 
 
@@ -16,13 +16,13 @@ Here are several log files and screenshots to show that everything is working.
 
 **Log Files**
 
-**[Docker Apache log](logs\apache.log)**
+**[Docker Apache log](/documentation/logs/apache.log)**
 
-**[Docker phpmyadmin log](logs\phpmyadmin.log)**
+**[Docker phpmyadmin log](/documentation/logs/phpmyadmin.log)**
 
-**[Docker mysql log](logs\mysql.log)**
+**[Docker mysql log](/documentation/logs/mysql.log)**
 
-**[Docker nginx log](logs\nginx.log)**
+**[Docker nginx log](/documentation/logs/nginx.log)**
 
 **Screenshots**
 PHPMyAdmin is reachable
