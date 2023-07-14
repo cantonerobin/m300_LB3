@@ -13,9 +13,10 @@ services:
                     memory: '1g'
         env_file:
             - ./mysql/.env
-        build:
-            context: ./php
-            dockerfile: Dockerfile
+        image: cantonerobin/m300_lb3_apache:latest
+        #build:
+        #    context: ./php
+        #    dockerfile: Dockerfile
         depends_on:
             - db
         volumes:
@@ -24,9 +25,10 @@ services:
             - 8000:80
     db:
         container_name: M300_LB3_db
-        build:
-            context: ./mysql
-            dockerfile: Dockerfile
+        image: cantonerobin/m300_lb3_mysql:latest
+        #build:
+        #    context: ./mysql
+        #    dockerfile: Dockerfile
         restart: on-failure:10
         deploy:
             resources:
