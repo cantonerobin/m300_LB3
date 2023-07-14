@@ -3,7 +3,7 @@ Because we have to address a database this time, I looked for a tutorial using P
 
 **Die wichtigsten Files sind diese**
 
-- **[index.php](/php\src\index.php)**
+- **[index.php](/php/src/index.php)**
 The connection to the database is established here.
 
 - **[docker-compose.yml](/docker-compose.yml)**
