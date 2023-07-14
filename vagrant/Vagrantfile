@@ -40,14 +40,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       apt-get -y install docker-ce docker-ce-cli containerd.io # docker-buildx-plugin docker-compose-plugin
       docker -v
       
-      cd /opt
 
       # Netzwerke erstellen
       docker network create --driver bridge --internal backend
       docker network create --driver bridge frontend
 
       # Service php-apache
-      docker run -d --name M300_LB3_web \
+      docker run -d --name M300_LB3_apache1 \
         --restart on-failure:10 \
         --cpus=1 \
         --memory=1g \
@@ -58,7 +57,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         cantonerobin/m300_lb3_apache:latest
 
       # Service db
-      docker run -d --name M300_LB3_db \
+      docker run -d --name M300_LB3_mysql \
         --restart on-failure:10 \
         --cpus=1 \
         --memory=1g \
@@ -82,7 +81,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       docker network connect frontend M300_LB3_phpmyadmin
 
       # Service nginx
-      docker run -d --name M300_LB3_nginx \
+      docker run -d --name M300_LB3_proxy1 \
         --restart on-failure:10 \
         --cpus=1 \
         --memory=1g \

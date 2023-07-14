@@ -1,0 +1,528 @@
+PS E:\git\m300_LB3\vagrant> vagrant up
+Bringing machine 'dockerhost' up with 'virtualbox' provider...
+==> dockerhost: Importing base box 'ubuntu/xenial64'...
+==> dockerhost: Matching MAC address for NAT networking...
+==> dockerhost: Checking if box 'ubuntu/xenial64' version '20211001.0.0' is up to date...
+==> dockerhost: Setting the name of the VM: vagrant_dockerhost_1689340894243_47703
+==> dockerhost: Clearing any previously set network interfaces...
+==> dockerhost: Preparing network interfaces based on configuration...
+    dockerhost: Adapter 1: nat
+    dockerhost: Adapter 2: hostonly
+==> dockerhost: Forwarding ports...
+    dockerhost: 22 (guest) => 2222 (host) (adapter 1)
+==> dockerhost: Running 'pre-boot' VM customizations...
+==> dockerhost: Booting VM...
+==> dockerhost: Waiting for machine to boot. This may take a few minutes...
+    dockerhost: SSH address: 127.0.0.1:2222
+    dockerhost: SSH username: vagrant
+    dockerhost: SSH auth method: private key
+    dockerhost: 
+    dockerhost: Vagrant insecure key detected. Vagrant will automatically replace
+    dockerhost: this with a newly generated keypair for better security.
+    dockerhost: 
+    dockerhost: Inserting generated public key within guest...
+    dockerhost: Removing insecure key from the guest if it's present...
+    dockerhost: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> dockerhost: Machine booted and ready!
+==> dockerhost: Checking for guest additions in VM...
+    dockerhost: The guest additions on this VM do not match the installed version of
+    dockerhost: VirtualBox! In most cases this is fine, but in rare cases it can
+    dockerhost: prevent things such as shared folders from working properly. If you see
+    dockerhost: shared folder errors, please make sure the guest additions within the
+    dockerhost: virtual machine match the version of VirtualBox you have installed on
+    dockerhost: your host and reload your VM.
+    dockerhost:
+    dockerhost: Guest Additions Version: 5.1.38
+    dockerhost: VirtualBox Version: 7.0
+==> dockerhost: Setting hostname...
+==> dockerhost: Configuring and enabling network interfaces...
+==> dockerhost: Mounting shared folders...
+    dockerhost: /opt => E:/git/m300_LB3
+    dockerhost: /vagrant => E:/git/m300_LB3/vagrant
+==> dockerhost: Running provisioner: shell...
+    dockerhost: Running: inline script
+    dockerhost: 
+    dockerhost: WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+    dockerhost:
+    dockerhost: Get:1 http://security.ubuntu.com/ubuntu xenial-security InRelease [99.8 kB]
+    dockerhost: Get:2 https://esm.ubuntu.com/infra/ubuntu xenial-infra-security InRelease [7,524 B]
+    dockerhost: Get:3 https://esm.ubuntu.com/infra/ubuntu xenial-infra-updates InRelease [7,475 B]
+    dockerhost: Hit:4 http://archive.ubuntu.com/ubuntu xenial InRelease
+    dockerhost: Get:5 http://security.ubuntu.com/ubuntu xenial-security/main amd64 Packages [1,648 kB]
+    dockerhost: Get:6 http://archive.ubuntu.com/ubuntu xenial-updates InRelease [99.8 kB]
+    dockerhost: Get:7 https://esm.ubuntu.com/infra/ubuntu xenial-infra-security/main amd64 Packages [750 kB]
+    dockerhost: Get:8 http://security.ubuntu.com/ubuntu xenial-security/main Translation-en [360 kB]
+    dockerhost: Get:9 http://security.ubuntu.com/ubuntu xenial-security/universe amd64 Packages [786 kB]
+    dockerhost: Get:10 http://security.ubuntu.com/ubuntu xenial-security/universe Translation-en [226 kB]
+    dockerhost: Get:11 http://security.ubuntu.com/ubuntu xenial-security/multiverse amd64 Packages [7,864 B]
+    dockerhost: Get:12 http://security.ubuntu.com/ubuntu xenial-security/multiverse Translation-en [2,672 B]
+    dockerhost: Get:13 http://archive.ubuntu.com/ubuntu xenial-backports InRelease [97.4 kB]
+    dockerhost: Get:14 http://archive.ubuntu.com/ubuntu xenial/universe amd64 Packages [7,532 kB]
+    dockerhost: Get:15 http://archive.ubuntu.com/ubuntu xenial/universe Translation-en [4,354 kB]
+    dockerhost: Get:16 http://archive.ubuntu.com/ubuntu xenial/multiverse amd64 Packages [144 kB]
+    dockerhost: Get:17 http://archive.ubuntu.com/ubuntu xenial/multiverse Translation-en [106 kB]
+    dockerhost: Get:18 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 Packages [2,049 kB]
+    dockerhost: Get:19 http://archive.ubuntu.com/ubuntu xenial-updates/main Translation-en [461 kB]
+    dockerhost: Get:20 http://archive.ubuntu.com/ubuntu xenial-updates/universe amd64 Packages [1,221 kB]
+    dockerhost: Get:21 http://archive.ubuntu.com/ubuntu xenial-updates/universe Translation-en [359 kB]
+    dockerhost: Get:22 http://archive.ubuntu.com/ubuntu xenial-updates/multiverse amd64 Packages [21.6 kB]
+    dockerhost: Get:23 http://archive.ubuntu.com/ubuntu xenial-updates/multiverse Translation-en [8,440 B]
+    dockerhost: Get:24 http://archive.ubuntu.com/ubuntu xenial-backports/main amd64 Packages [9,812 B]
+    dockerhost: Get:25 http://archive.ubuntu.com/ubuntu xenial-backports/main Translation-en [4,456 B]
+    dockerhost: Get:26 http://archive.ubuntu.com/ubuntu xenial-backports/universe amd64 Packages [11.3 kB]
+    dockerhost: Get:27 http://archive.ubuntu.com/ubuntu xenial-backports/universe Translation-en [4,476 B]
+    dockerhost: Fetched 20.4 MB in 4s (4,584 kB/s)
+    dockerhost: Reading package lists...
+    dockerhost: Building dependency tree...
+    dockerhost: Reading state information...
+    dockerhost: 5 packages can be upgraded. Run 'apt list --upgradable' to see them.
+    dockerhost:
+    dockerhost: WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+    dockerhost:
+    dockerhost: Reading package lists...
+    dockerhost: Building dependency tree...
+    dockerhost: Reading state information...
+    dockerhost: Calculating upgrade...
+    dockerhost: The following packages will be upgraded:
+    dockerhost:   apparmor libapparmor-perl libapparmor1 ubuntu-advantage-tools
+    dockerhost:   update-notifier-common
+    dockerhost: 5 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+    dockerhost: 3 standard security updates
+    dockerhost: Need to get 859 kB of archives.
+    dockerhost: After this operation, 1,590 kB disk space will be freed.
+    dockerhost: Get:1 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 update-notifier-common all 3.168.20 [169 kB]
+    dockerhost: Get:2 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libapparmor1 amd64 2.10.95-0ubuntu2.12 [29.4 kB]
+    dockerhost: Get:3 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 ubuntu-advantage-tools amd64 28.1~16.04 [178 kB]
+    dockerhost: Get:4 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libapparmor-perl amd64 2.10.95-0ubuntu2.12 [31.6 kB]
+    dockerhost: Get:5 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 apparmor amd64 2.10.95-0ubuntu2.12 [451 kB]
+    dockerhost: dpkg-preconfigure: unable to re-open stdin: No such file or directory
+    dockerhost: Fetched 859 kB in 1s (643 kB/s)
+(Reading database ... 54424 files and directories currently installed.)
+    dockerhost: Preparing to unpack .../update-notifier-common_3.168.20_all.deb ...
+    dockerhost: Unpacking update-notifier-common (3.168.20) over (3.168.15) ...
+    dockerhost: Preparing to unpack .../libapparmor1_2.10.95-0ubuntu2.12_amd64.deb ...
+    dockerhost: Unpacking libapparmor1:amd64 (2.10.95-0ubuntu2.12) over (2.10.95-0ubuntu2.11) ...
+    dockerhost: Processing triggers for libc-bin (2.23-0ubuntu11.3) ...
+    dockerhost: Setting up libapparmor1:amd64 (2.10.95-0ubuntu2.12) ...
+    dockerhost: Processing triggers for libc-bin (2.23-0ubuntu11.3) ...
+(Reading database ... 54451 files and directories currently installed.)
+    dockerhost: Preparing to unpack .../ubuntu-advantage-tools_28.1~16.04_amd64.deb ...
+    dockerhost: Unpacking ubuntu-advantage-tools (28.1~16.04) over (27.2.2~16.04.1) ...
+    dockerhost: Preparing to unpack .../libapparmor-perl_2.10.95-0ubuntu2.12_amd64.deb ...
+    dockerhost: Unpacking libapparmor-perl (2.10.95-0ubuntu2.12) over (2.10.95-0ubuntu2.11) ...
+    dockerhost: Preparing to unpack .../apparmor_2.10.95-0ubuntu2.12_amd64.deb ...
+    dockerhost: Unpacking apparmor (2.10.95-0ubuntu2.12) over (2.10.95-0ubuntu2.11) ...
+    dockerhost: Processing triggers for man-db (2.7.5-1) ...
+    dockerhost: Processing triggers for ureadahead (0.100.0-19.1) ...
+    dockerhost: Processing triggers for systemd (229-4ubuntu21.31) ...
+    dockerhost: Setting up update-notifier-common (3.168.20) ...
+    dockerhost: Setting up ubuntu-advantage-tools (28.1~16.04) ...
+    dockerhost: Installing new version of config file /etc/apt/apt.conf.d/20apt-esm-hook.conf ...
+    dockerhost: Installing new version of config file /etc/logrotate.d/ubuntu-advantage-tools ...
+    dockerhost: Installing new version of config file /etc/ubuntu-advantage/help_data.yaml ...
+    dockerhost: Installing new version of config file /etc/ubuntu-advantage/uaclient.conf ...
+    dockerhost: Installing new version of config file /etc/update-motd.d/91-contract-ua-esm-status ...
+    dockerhost: Created symlink /run/cloud-init/cloud-id -> /run/cloud-init/cloud-id-nocloud.
+    dockerhost: Removing obsolete conffile /etc/update-motd.d/88-esm-announce ...
+    dockerhost: Setting up libapparmor-perl (2.10.95-0ubuntu2.12) ...
+    dockerhost: Setting up apparmor (2.10.95-0ubuntu2.12) ...
+    dockerhost: update-rc.d: warning: start and stop actions are no longer supported; falling back to defaults
+    dockerhost: Skipping profile in /etc/apparmor.d/disable: usr.sbin.rsyslogd
+    dockerhost: 
+    dockerhost: WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+    dockerhost:
+    dockerhost: Reading package lists...
+    dockerhost: Building dependency tree...
+    dockerhost: Reading state information...
+    dockerhost: apt-transport-https is already the newest version (1.2.35).
+    dockerhost: ca-certificates is already the newest version (20210119~16.04.1).
+    dockerhost: curl is already the newest version (7.47.0-1ubuntu2.19).
+    dockerhost: software-properties-common is already the newest version (0.96.20.10).
+    dockerhost: The following additional packages will be installed:
+    dockerhost:   libassuan0 libnpth0 pinentry-curses
+    dockerhost: Suggested packages:
+    dockerhost:   pinentry-doc
+    dockerhost: The following NEW packages will be installed:
+    dockerhost:   gnupg-agent libassuan0 libnpth0 pinentry-curses
+    dockerhost: 0 upgraded, 4 newly installed, 0 to remove and 0 not upgraded.
+    dockerhost: Need to get 314 kB of archives.
+    dockerhost: After this operation, 1,202 kB of additional disk space will be used.
+    dockerhost: Get:1 http://archive.ubuntu.com/ubuntu xenial/main amd64 libassuan0 amd64 2.4.2-2 [34.6 kB]
+    dockerhost: Get:2 http://archive.ubuntu.com/ubuntu xenial/main amd64 pinentry-curses amd64 0.9.7-3 [31.2 kB]
+    dockerhost: Get:3 http://archive.ubuntu.com/ubuntu xenial/main amd64 libnpth0 amd64 1.2-3 [7,998 B]
+    dockerhost: Get:4 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 gnupg-agent amd64 2.1.11-6ubuntu2.1 [240 kB]
+    dockerhost: dpkg-preconfigure: unable to re-open stdin: No such file or directory
+    dockerhost: Fetched 314 kB in 1s (291 kB/s)
+    dockerhost: Selecting previously unselected package libassuan0:amd64.
+(Reading database ... 54569 files and directories currently installed.)
+    dockerhost: Preparing to unpack .../libassuan0_2.4.2-2_amd64.deb ...
+    dockerhost: Unpacking libassuan0:amd64 (2.4.2-2) ...
+    dockerhost: Selecting previously unselected package pinentry-curses.
+    dockerhost: Preparing to unpack .../pinentry-curses_0.9.7-3_amd64.deb ...
+    dockerhost: Unpacking pinentry-curses (0.9.7-3) ...
+    dockerhost: Selecting previously unselected package libnpth0:amd64.
+    dockerhost: Preparing to unpack .../libnpth0_1.2-3_amd64.deb ...
+    dockerhost: Unpacking libnpth0:amd64 (1.2-3) ...
+    dockerhost: Selecting previously unselected package gnupg-agent.
+    dockerhost: Preparing to unpack .../gnupg-agent_2.1.11-6ubuntu2.1_amd64.deb ...
+    dockerhost: Unpacking gnupg-agent (2.1.11-6ubuntu2.1) ...
+    dockerhost: Processing triggers for libc-bin (2.23-0ubuntu11.3) ...
+    dockerhost: Processing triggers for man-db (2.7.5-1) ...
+    dockerhost: Setting up libassuan0:amd64 (2.4.2-2) ...
+    dockerhost: Setting up pinentry-curses (0.9.7-3) ...
+    dockerhost: Setting up libnpth0:amd64 (1.2-3) ...
+    dockerhost: Setting up gnupg-agent (2.1.11-6ubuntu2.1) ...
+    dockerhost: Processing triggers for libc-bin (2.23-0ubuntu11.3) ...
+    dockerhost: Hit:1 http://archive.ubuntu.com/ubuntu xenial InRelease
+    dockerhost: Hit:2 http://archive.ubuntu.com/ubuntu xenial-updates InRelease
+    dockerhost: Hit:3 http://archive.ubuntu.com/ubuntu xenial-backports InRelease
+    dockerhost: Get:4 https://download.docker.com/linux/ubuntu xenial InRelease [66.2 kB]
+    dockerhost: Hit:5 http://security.ubuntu.com/ubuntu xenial-security InRelease
+    dockerhost: Get:6 https://download.docker.com/linux/ubuntu xenial/stable amd64 Packages [21.0 kB]
+    dockerhost: Fetched 87.2 kB in 0s (178 kB/s)
+    dockerhost: Reading package lists...
+    dockerhost: Reading package lists...
+    dockerhost: Building dependency tree...
+    dockerhost: Reading state information...
+    dockerhost: The following additional packages will be installed:
+    dockerhost:   docker-ce-rootless-extras docker-scan-plugin libltdl7 pigz
+    dockerhost: Suggested packages:
+    dockerhost:   aufs-tools cgroupfs-mount | cgroup-lite
+    dockerhost: Recommended packages:
+    dockerhost:   slirp4netns
+    dockerhost: The following NEW packages will be installed:
+    dockerhost:   containerd.io docker-ce docker-ce-cli docker-ce-rootless-extras
+    dockerhost:   docker-scan-plugin libltdl7 pigz
+    dockerhost: 0 upgraded, 7 newly installed, 0 to remove and 0 not upgraded.
+    dockerhost: Need to get 107 MB of archives.
+    dockerhost: After this operation, 466 MB of additional disk space will be used.
+    dockerhost: Get:1 http://archive.ubuntu.com/ubuntu xenial/universe amd64 pigz amd64 2.3.1-2 [61.1 kB]
+    dockerhost: Get:2 https://download.docker.com/linux/ubuntu xenial/stable amd64 containerd.io amd64 1.4.6-1 [28.0 MB]
+    dockerhost: Get:3 http://archive.ubuntu.com/ubuntu xenial/main amd64 libltdl7 amd64 2.4.6-0.1 [38.3 kB]
+    dockerhost: Get:4 https://download.docker.com/linux/ubuntu xenial/stable amd64 docker-ce-cli amd64 5:20.10.7~3-0~ubuntu-xenial [41.1 MB]
+    dockerhost: Get:5 https://download.docker.com/linux/ubuntu xenial/stable amd64 docker-ce amd64 5:20.10.7~3-0~ubuntu-xenial [24.8 MB]
+    dockerhost: Get:6 https://download.docker.com/linux/ubuntu xenial/stable amd64 docker-ce-rootless-extras amd64 5:20.10.7~3-0~ubuntu-xenial [9,052 kB]
+    dockerhost: Get:7 https://download.docker.com/linux/ubuntu xenial/stable amd64 docker-scan-plugin amd64 0.8.0~ubuntu-xenial [3,889 kB]
+    dockerhost: dpkg-preconfigure: unable to re-open stdin: No such file or directory
+    dockerhost: Fetched 107 MB in 9s (11.3 MB/s)
+    dockerhost: Selecting previously unselected package pigz.
+(Reading database ... 54608 files and directories currently installed.)
+    dockerhost: Preparing to unpack .../pigz_2.3.1-2_amd64.deb ...
+    dockerhost: Unpacking pigz (2.3.1-2) ...
+    dockerhost: Selecting previously unselected package containerd.io.
+    dockerhost: Preparing to unpack .../containerd.io_1.4.6-1_amd64.deb ...
+    dockerhost: Unpacking containerd.io (1.4.6-1) ...
+    dockerhost: Selecting previously unselected package docker-ce-cli.
+    dockerhost: Preparing to unpack .../docker-ce-cli_5%3a20.10.7~3-0~ubuntu-xenial_amd64.deb ...
+    dockerhost: Unpacking docker-ce-cli (5:20.10.7~3-0~ubuntu-xenial) ...
+    dockerhost: Selecting previously unselected package docker-ce.
+    dockerhost: Preparing to unpack .../docker-ce_5%3a20.10.7~3-0~ubuntu-xenial_amd64.deb ...
+    dockerhost: Unpacking docker-ce (5:20.10.7~3-0~ubuntu-xenial) ...
+    dockerhost: Selecting previously unselected package docker-ce-rootless-extras.
+    dockerhost: Preparing to unpack .../docker-ce-rootless-extras_5%3a20.10.7~3-0~ubuntu-xenial_amd64.deb ...
+    dockerhost: Unpacking docker-ce-rootless-extras (5:20.10.7~3-0~ubuntu-xenial) ...
+    dockerhost: Selecting previously unselected package docker-scan-plugin.
+    dockerhost: Preparing to unpack .../docker-scan-plugin_0.8.0~ubuntu-xenial_amd64.deb ...
+    dockerhost: Unpacking docker-scan-plugin (0.8.0~ubuntu-xenial) ...
+    dockerhost: Selecting previously unselected package libltdl7:amd64.
+    dockerhost: Preparing to unpack .../libltdl7_2.4.6-0.1_amd64.deb ...
+    dockerhost: Unpacking libltdl7:amd64 (2.4.6-0.1) ...
+    dockerhost: Processing triggers for man-db (2.7.5-1) ...
+    dockerhost: Processing triggers for ureadahead (0.100.0-19.1) ...
+    dockerhost: Processing triggers for systemd (229-4ubuntu21.31) ...
+    dockerhost: Processing triggers for libc-bin (2.23-0ubuntu11.3) ...
+    dockerhost: Setting up pigz (2.3.1-2) ...
+    dockerhost: Setting up containerd.io (1.4.6-1) ...
+    dockerhost: Setting up docker-ce-cli (5:20.10.7~3-0~ubuntu-xenial) ...
+    dockerhost: Setting up docker-ce (5:20.10.7~3-0~ubuntu-xenial) ...
+    dockerhost: Setting up docker-ce-rootless-extras (5:20.10.7~3-0~ubuntu-xenial) ...
+    dockerhost: Setting up docker-scan-plugin (0.8.0~ubuntu-xenial) ...
+    dockerhost: Setting up libltdl7:amd64 (2.4.6-0.1) ...
+    dockerhost: Processing triggers for ureadahead (0.100.0-19.1) ...
+    dockerhost: Processing triggers for systemd (229-4ubuntu21.31) ...
+    dockerhost: Processing triggers for libc-bin (2.23-0ubuntu11.3) ...
+    dockerhost: Docker version 20.10.7, build f0df350
+    dockerhost: 8ddd0c1e2ef9f905a47bb5c1961ca54cb61bd552f946e83aa2e62917261e5e8a
+    dockerhost: 510f6e2d9395b570c6426e2a5c99a65f8a53e1fd73f61a326a2a857339385e22
+    dockerhost: Unable to find image 'cantonerobin/m300_lb3_apache:latest' locally
+    dockerhost: latest: Pulling from cantonerobin/m300_lb3_apache
+    dockerhost: 9d21b12d5fab: Pulling fs layer
+    dockerhost: 1d2f438b3058: Pulling fs layer
+    dockerhost: f04ed8a9ea49: Pulling fs layer
+    dockerhost: 10478cdfe5da: Pulling fs layer
+    dockerhost: 81a7d8cd4ad8: Pulling fs layer
+    dockerhost: 0f62c4a728c4: Pulling fs layer
+    dockerhost: 49c7e2158665: Pulling fs layer
+    dockerhost: 4b4197cfa218: Pulling fs layer
+    dockerhost: 3c74c30f4cf1: Pulling fs layer
+    dockerhost: 72993f5e6f4f: Pulling fs layer
+    dockerhost: 4b6baf92ab5f: Pulling fs layer
+    dockerhost: 4d48d4cf37c3: Pulling fs layer
+    dockerhost: bb572f9b1334: Pulling fs layer
+    dockerhost: abd6ec85ac7a: Pulling fs layer
+    dockerhost: 9b546e760bf4: Pulling fs layer
+    dockerhost: 10478cdfe5da: Waiting
+    dockerhost: 81a7d8cd4ad8: Waiting
+    dockerhost: 0f62c4a728c4: Waiting
+    dockerhost: 49c7e2158665: Waiting
+    dockerhost: 4b4197cfa218: Waiting
+    dockerhost: 3c74c30f4cf1: Waiting
+    dockerhost: 72993f5e6f4f: Waiting
+    dockerhost: 4b6baf92ab5f: Waiting
+    dockerhost: 4d48d4cf37c3: Waiting
+    dockerhost: bb572f9b1334: Waiting
+    dockerhost: abd6ec85ac7a: Waiting
+    dockerhost: 9b546e760bf4: Waiting
+    dockerhost: 1d2f438b3058: Verifying Checksum
+    dockerhost: 1d2f438b3058: Download complete
+    dockerhost: 10478cdfe5da: Verifying Checksum
+    dockerhost: 10478cdfe5da: Download complete
+    dockerhost: 81a7d8cd4ad8: Verifying Checksum
+    dockerhost: 81a7d8cd4ad8: Download complete
+    dockerhost: 0f62c4a728c4: Verifying Checksum
+    dockerhost: 0f62c4a728c4: Download complete
+    dockerhost: 49c7e2158665: Verifying Checksum
+    dockerhost: 49c7e2158665: Download complete
+    dockerhost: 4b4197cfa218: Verifying Checksum
+    dockerhost: 4b4197cfa218: Download complete
+    dockerhost: 3c74c30f4cf1: Verifying Checksum
+    dockerhost: 3c74c30f4cf1: Download complete
+    dockerhost: 72993f5e6f4f: Verifying Checksum
+    dockerhost: 72993f5e6f4f: Download complete
+    dockerhost: 4b6baf92ab5f: Verifying Checksum
+    dockerhost: 4b6baf92ab5f: Download complete
+    dockerhost: 4d48d4cf37c3: Verifying Checksum
+    dockerhost: 4d48d4cf37c3: Download complete
+    dockerhost: bb572f9b1334: Verifying Checksum
+    dockerhost: bb572f9b1334: Download complete
+    dockerhost: 9d21b12d5fab: Verifying Checksum
+    dockerhost: 9d21b12d5fab: Download complete
+    dockerhost: abd6ec85ac7a: Verifying Checksum
+    dockerhost: abd6ec85ac7a: Download complete
+    dockerhost: 9b546e760bf4: Verifying Checksum
+    dockerhost: 9b546e760bf4: Download complete
+    dockerhost: f04ed8a9ea49: Verifying Checksum
+    dockerhost: f04ed8a9ea49: Download complete
+    dockerhost: 9d21b12d5fab: Pull complete
+    dockerhost: 1d2f438b3058: Pull complete
+    dockerhost: f04ed8a9ea49: Pull complete
+    dockerhost: 10478cdfe5da: Pull complete
+    dockerhost: 81a7d8cd4ad8: Pull complete
+    dockerhost: 0f62c4a728c4: Pull complete
+    dockerhost: 49c7e2158665: Pull complete
+    dockerhost: 4b4197cfa218: Pull complete
+    dockerhost: 3c74c30f4cf1: Pull complete
+    dockerhost: 72993f5e6f4f: Pull complete
+    dockerhost: 4b6baf92ab5f: Pull complete
+    dockerhost: 4d48d4cf37c3: Pull complete
+    dockerhost: bb572f9b1334: Pull complete
+    dockerhost: abd6ec85ac7a: Pull complete
+    dockerhost: 9b546e760bf4: Pull complete
+    dockerhost: Digest: sha256:b2695f5a656fa522f378533db0b1bc1627b27e499fd1767c61e75921e869669f
+    dockerhost: Status: Downloaded newer image for cantonerobin/m300_lb3_apache:latest
+    dockerhost: WARNING: Your kernel does not support swap limit capabilities or the cgroup is not mounted. Memory limited without swap.
+    dockerhost: 0b07357afa472ec859fc2c708608fb8fc96374d893aff1f76baa0949578880f4
+    dockerhost: Unable to find image 'cantonerobin/m300_lb3_mysql:latest' locally
+    dockerhost: latest: Pulling from cantonerobin/m300_lb3_mysql
+    dockerhost: e2c03c89dcad: Pulling fs layer
+    dockerhost: 68eb43837bf8: Pulling fs layer
+    dockerhost: 796892ddf5ac: Pulling fs layer
+    dockerhost: 6bca45eb31e1: Pulling fs layer
+    dockerhost: ebb53bc0dcca: Pulling fs layer
+    dockerhost: 2e2c6bdc7a40: Pulling fs layer
+    dockerhost: 6f27b5c76970: Pulling fs layer
+    dockerhost: 438533a24810: Pulling fs layer
+    dockerhost: e5bdf19985e0: Pulling fs layer
+    dockerhost: 667fa148337b: Pulling fs layer
+    dockerhost: 5baa702110e4: Pulling fs layer
+    dockerhost: 0c6c8c502f7c: Pulling fs layer
+    dockerhost: d29f6e4075f9: Pulling fs layer
+    dockerhost: 5f49f974694c: Pulling fs layer
+    dockerhost: 6bca45eb31e1: Waiting
+    dockerhost: 438533a24810: Waiting
+    dockerhost: e5bdf19985e0: Waiting
+    dockerhost: 667fa148337b: Waiting
+    dockerhost: 5baa702110e4: Waiting
+    dockerhost: 0c6c8c502f7c: Waiting
+    dockerhost: d29f6e4075f9: Waiting
+    dockerhost: 5f49f974694c: Waiting
+    dockerhost: ebb53bc0dcca: Waiting
+    dockerhost: 2e2c6bdc7a40: Waiting
+    dockerhost: 6f27b5c76970: Waiting
+    dockerhost: 68eb43837bf8: Verifying Checksum
+    dockerhost: 68eb43837bf8: Download complete
+    dockerhost: 796892ddf5ac: Verifying Checksum
+    dockerhost: 796892ddf5ac: Download complete
+    dockerhost: ebb53bc0dcca: Verifying Checksum
+    dockerhost: ebb53bc0dcca: Download complete
+    dockerhost: 2e2c6bdc7a40: Verifying Checksum
+    dockerhost: 2e2c6bdc7a40: Download complete
+    dockerhost: 6bca45eb31e1: Verifying Checksum
+    dockerhost: 6bca45eb31e1: Download complete
+    dockerhost: 438533a24810: Verifying Checksum
+    dockerhost: 438533a24810: Download complete
+    dockerhost: e5bdf19985e0: Verifying Checksum
+    dockerhost: e5bdf19985e0: Download complete
+    dockerhost: 667fa148337b: Verifying Checksum
+    dockerhost: 667fa148337b: Download complete
+    dockerhost: 5baa702110e4: Verifying Checksum
+    dockerhost: 5baa702110e4: Download complete
+    dockerhost: 0c6c8c502f7c: Verifying Checksum
+    dockerhost: 0c6c8c502f7c: Download complete
+    dockerhost: d29f6e4075f9: Verifying Checksum
+    dockerhost: d29f6e4075f9: Download complete
+    dockerhost: 5f49f974694c: Verifying Checksum
+    dockerhost: 5f49f974694c: Download complete
+    dockerhost: e2c03c89dcad: Verifying Checksum
+    dockerhost: e2c03c89dcad: Download complete
+    dockerhost: 6f27b5c76970: Verifying Checksum
+    dockerhost: 6f27b5c76970: Download complete
+    dockerhost: e2c03c89dcad: Pull complete
+    dockerhost: 68eb43837bf8: Pull complete
+    dockerhost: 796892ddf5ac: Pull complete
+    dockerhost: 6bca45eb31e1: Pull complete
+    dockerhost: ebb53bc0dcca: Pull complete
+    dockerhost: 2e2c6bdc7a40: Pull complete
+    dockerhost: 6f27b5c76970: Pull complete
+    dockerhost: 438533a24810: Pull complete
+    dockerhost: e5bdf19985e0: Pull complete
+    dockerhost: 667fa148337b: Pull complete
+    dockerhost: 5baa702110e4: Pull complete
+    dockerhost: 0c6c8c502f7c: Pull complete
+    dockerhost: d29f6e4075f9: Pull complete
+    dockerhost: 5f49f974694c: Pull complete
+    dockerhost: Digest: sha256:45536b074f479a0b886afbc7cc1ac6e9b5024b7af0bb9aa9cee34b84fcda6374
+    dockerhost: Status: Downloaded newer image for cantonerobin/m300_lb3_mysql:latest
+    dockerhost: 0eb02db0d8bd272f3b565aeb1e4b2024b36e4b3595944d1e55e70aa94e462241
+    dockerhost: WARNING: Your kernel does not support swap limit capabilities or the cgroup is not mounted. Memory limited without swap.
+    dockerhost: Unable to find image 'phpmyadmin/phpmyadmin:latest' locally
+    dockerhost: latest: Pulling from phpmyadmin/phpmyadmin
+    dockerhost: f1f26f570256: Pulling fs layer
+    dockerhost: ee0a4e40ccac: Pulling fs layer
+    dockerhost: 5ca9fb408faa: Pulling fs layer
+    dockerhost: 5baa808a48ff: Pulling fs layer
+    dockerhost: 6e8d74e4d8ee: Pulling fs layer
+    dockerhost: fac8e70fcf67: Pulling fs layer
+    dockerhost: b3b7906fb177: Pulling fs layer
+    dockerhost: cb4935bbeb83: Pulling fs layer
+    dockerhost: c9e00ef337e3: Pulling fs layer
+    dockerhost: cfe495c8d695: Pulling fs layer
+    dockerhost: dcc3fd107f0c: Pulling fs layer
+    dockerhost: fe3c587d1f07: Pulling fs layer
+    dockerhost: 677f27d94442: Pulling fs layer
+    dockerhost: 4d778a8cb653: Pulling fs layer
+    dockerhost: 5f0f7b557ecd: Pulling fs layer
+    dockerhost: 6ad259d60f7c: Pulling fs layer
+    dockerhost: 41acd705cbc4: Pulling fs layer
+    dockerhost: 912204d5a7e6: Pulling fs layer
+    dockerhost: 5baa808a48ff: Waiting
+    dockerhost: 6e8d74e4d8ee: Waiting
+    dockerhost: fac8e70fcf67: Waiting
+    dockerhost: b3b7906fb177: Waiting
+    dockerhost: cb4935bbeb83: Waiting
+    dockerhost: c9e00ef337e3: Waiting
+    dockerhost: cfe495c8d695: Waiting
+    dockerhost: dcc3fd107f0c: Waiting
+    dockerhost: fe3c587d1f07: Waiting
+    dockerhost: 677f27d94442: Waiting
+    dockerhost: 4d778a8cb653: Waiting
+    dockerhost: 5f0f7b557ecd: Waiting
+    dockerhost: 6ad259d60f7c: Waiting
+    dockerhost: 41acd705cbc4: Waiting
+    dockerhost: 912204d5a7e6: Waiting
+    dockerhost: ee0a4e40ccac: Verifying Checksum
+    dockerhost: ee0a4e40ccac: Download complete
+    dockerhost: 5baa808a48ff: Verifying Checksum
+    dockerhost: 5baa808a48ff: Download complete
+    dockerhost: 6e8d74e4d8ee: Verifying Checksum
+    dockerhost: 6e8d74e4d8ee: Download complete
+    dockerhost: fac8e70fcf67: Verifying Checksum
+    dockerhost: fac8e70fcf67: Download complete
+    dockerhost: b3b7906fb177: Verifying Checksum
+    dockerhost: b3b7906fb177: Download complete
+    dockerhost: cb4935bbeb83: Verifying Checksum
+    dockerhost: cb4935bbeb83: Download complete
+    dockerhost: c9e00ef337e3: Verifying Checksum
+    dockerhost: c9e00ef337e3: Download complete
+    dockerhost: cfe495c8d695: Verifying Checksum
+    dockerhost: cfe495c8d695: Download complete
+    dockerhost: dcc3fd107f0c: Verifying Checksum
+    dockerhost: dcc3fd107f0c: Download complete
+    dockerhost: fe3c587d1f07: Verifying Checksum
+    dockerhost: fe3c587d1f07: Download complete
+    dockerhost: 677f27d94442: Verifying Checksum
+    dockerhost: 677f27d94442: Download complete
+    dockerhost: f1f26f570256: Verifying Checksum
+    dockerhost: f1f26f570256: Download complete
+    dockerhost: 4d778a8cb653: Verifying Checksum
+    dockerhost: 4d778a8cb653: Download complete
+    dockerhost: 5f0f7b557ecd: Verifying Checksum
+    dockerhost: 5f0f7b557ecd: Download complete
+    dockerhost: 41acd705cbc4: Verifying Checksum
+    dockerhost: 41acd705cbc4: Download complete
+    dockerhost: 912204d5a7e6: Verifying Checksum
+    dockerhost: 912204d5a7e6: Download complete
+    dockerhost: 6ad259d60f7c: Verifying Checksum
+    dockerhost: 6ad259d60f7c: Download complete
+    dockerhost: 5ca9fb408faa: Verifying Checksum
+    dockerhost: 5ca9fb408faa: Download complete
+    dockerhost: f1f26f570256: Pull complete
+    dockerhost: ee0a4e40ccac: Pull complete
+    dockerhost: 5ca9fb408faa: Pull complete
+    dockerhost: 5baa808a48ff: Pull complete
+    dockerhost: 6e8d74e4d8ee: Pull complete
+    dockerhost: fac8e70fcf67: Pull complete
+    dockerhost: b3b7906fb177: Pull complete
+    dockerhost: cb4935bbeb83: Pull complete
+    dockerhost: c9e00ef337e3: Pull complete
+    dockerhost: cfe495c8d695: Pull complete
+    dockerhost: dcc3fd107f0c: Pull complete
+    dockerhost: fe3c587d1f07: Pull complete
+    dockerhost: 677f27d94442: Pull complete
+    dockerhost: 4d778a8cb653: Pull complete
+    dockerhost: 5f0f7b557ecd: Pull complete
+    dockerhost: 6ad259d60f7c: Pull complete
+    dockerhost: 41acd705cbc4: Pull complete
+    dockerhost: 912204d5a7e6: Pull complete
+    dockerhost: Digest: sha256:ed87921184b59f7d8fc85c6a5f041c22758a4d4419c0ee3bac38eb7e133eaed3
+    dockerhost: Status: Downloaded newer image for phpmyadmin/phpmyadmin:latest
+    dockerhost: WARNING: Your kernel does not support swap limit capabilities or the cgroup is not mounted. Memory limited without swap.
+    dockerhost: 6cf673c7d8a68533bb505c12ee9ea22b9f513a4b8784bf755f60dbbf733fb654
+    dockerhost: Unable to find image 'nginx:latest' locally
+    dockerhost: latest: Pulling from library/nginx
+    dockerhost: faef57eae888: Pulling fs layer
+    dockerhost: 76579e9ed380: Pulling fs layer
+    dockerhost: cf707e233955: Pulling fs layer
+    dockerhost: 91bb7937700d: Pulling fs layer
+    dockerhost: 4b962717ba55: Pulling fs layer
+    dockerhost: f46d7b05649a: Pulling fs layer
+    dockerhost: 103501419a0a: Pulling fs layer
+    dockerhost: 91bb7937700d: Waiting
+    dockerhost: 4b962717ba55: Waiting
+    dockerhost: f46d7b05649a: Waiting
+    dockerhost: 103501419a0a: Waiting
+    dockerhost: cf707e233955: Verifying Checksum
+    dockerhost: cf707e233955: Download complete
+    dockerhost: 91bb7937700d: Verifying Checksum
+    dockerhost: 91bb7937700d: Download complete
+    dockerhost: 4b962717ba55: Verifying Checksum
+    dockerhost: 4b962717ba55: Download complete
+    dockerhost: f46d7b05649a: Verifying Checksum
+    dockerhost: f46d7b05649a: Download complete
+    dockerhost: 103501419a0a: Verifying Checksum
+    dockerhost: 103501419a0a: Download complete
+    dockerhost: faef57eae888: Verifying Checksum
+    dockerhost: faef57eae888: Download complete
+    dockerhost: 76579e9ed380: Verifying Checksum
+    dockerhost: 76579e9ed380: Download complete
+    dockerhost: faef57eae888: Pull complete
+    dockerhost: 76579e9ed380: Pull complete
+    dockerhost: cf707e233955: Pull complete
+    dockerhost: 91bb7937700d: Pull complete
+    dockerhost: 4b962717ba55: Pull complete
+    dockerhost: f46d7b05649a: Pull complete
+    dockerhost: 103501419a0a: Pull complete
+    dockerhost: Digest: sha256:08bc36ad52474e528cc1ea3426b5e3f4bad8a130318e3140d6cfe29c8892c7ef
+    dockerhost: Status: Downloaded newer image for nginx:latest
+    dockerhost: WARNING: Your kernel does not support swap limit capabilities or the cgroup is not mounted. Memory limited without swap.
+    dockerhost: 2651cc10fda6745e6b6fa4b90eb7c1c9ab494e4b0bb5f46f0da03f80b506394d

@@ -5,7 +5,7 @@
 
 ## Git
 The developer works with Git and pushes his work to GitHub.
-  
+
 
 ## GitHub
 In GitHub we will store our code and also run the CI/CD job.
@@ -17,7 +17,7 @@ On DockerHub we will store the DockerImage in our own registry. From here we can
 ## Docker
 With docker, a containerized environment is made available.
 
-  
+
 ## Apache
 Used as a web server.
 
@@ -37,5 +37,8 @@ Vagrant is used to automatically create the VM which is then used as a host for 
 ## Project
 As in LB2, I have tried to depict a real use case. This LB3 therefore builds directly on LB2.
 
-
+**This is an overview of the process.**
 ![Alt text](<pics/Overview.jpg>)
+
+
+All files have inline comments, so i wont explain to much here in the documentation.
