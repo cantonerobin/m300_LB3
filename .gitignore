@@ -1,2 +1,5 @@
 #Mysql
-/mysql/data
+mysql/data
+vagrant/*
+!vagrant/Vagrantfile
+containerd

@@ -23,6 +23,8 @@ services:
             - ./php/src:/var/www/html/
         ports:
             - 8000:80
+        networks:
+            - backend
     db:
         container_name: M300_LB3_db
         image: cantonerobin/m300_lb3_mysql:latest
@@ -44,6 +46,8 @@ services:
             - ./mysql/data:/var/lib/mysql
         ports:
             - "9906:3306"
+        networks:
+            - backend
     phpmyadmin:
         image: phpmyadmin/phpmyadmin
         container_name: M300_LB3_phpmyadmin
@@ -62,6 +66,9 @@ services:
             - '8080:80'
         depends_on:
             - db
+        networks:
+            - frontend
+            - backend
     nginx:
         image: nginx:latest
         container_name: M300_LB3_nginx
@@ -78,3 +85,14 @@ services:
             - 80:80
         volumes:
             - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+        networks:
+            - frontend
+            - backend
+
+networks:
+  frontend:
+    external: false
+    name: frontend
+  backend:
+    external: true
+    name: backend
