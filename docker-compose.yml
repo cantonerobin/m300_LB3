@@ -2,7 +2,15 @@ version: '3.8'
 services:
     php-apache:
         container_name: M300_LB3_php-apache
-        restart: unless-stopped
+        restart: on-failure:10
+        deploy:
+            resources:
+                limits:
+                    cpus: '2'
+                    memory: '2g'
+                reservations:
+                    cpus: '1'
+                    memory: '1g'
         env_file:
             - ./mysql/.env
         build:
@@ -19,7 +27,15 @@ services:
         build:
             context: ./mysql
             dockerfile: Dockerfile
-        restart: unless-stopped
+        restart: on-failure:10
+        deploy:
+            resources:
+                limits:
+                    cpus: '2'
+                    memory: '2g'
+                reservations:
+                    cpus: '1'
+                    memory: '1g'
         env_file:
             - ./mysql/.env
         volumes:
@@ -29,7 +45,15 @@ services:
     phpmyadmin:
         image: phpmyadmin/phpmyadmin
         container_name: M300_LB3_phpmyadmin
-        restart: unless-stopped
+        restart: on-failure:10
+        deploy:
+            resources:
+                limits:
+                    cpus: '2'
+                    memory: '2g'
+                reservations:
+                    cpus: '1'
+                    memory: '1g'
         environment:
             PMA_HOST: db
         ports:
@@ -39,7 +63,15 @@ services:
     nginx:
         image: nginx:latest
         container_name: M300_LB3_nginx
-        restart: unless-stopped
+        restart: on-failure:10
+        deploy:
+            resources:
+                limits:
+                    cpus: '2'
+                    memory: '2g'
+                reservations:
+                    cpus: '1'
+                    memory: '1g'
         ports:
             - 80:80
         volumes:
